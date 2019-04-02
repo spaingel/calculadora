@@ -1,0 +1,38 @@
+#screen {
+    border: 2px black solid;
+    width: 664px;
+    height: 50px;
+    text-align: right;
+}
+
+#numbers {
+    display: grid;
+    background-color: blue;
+    width: 400px;
+    height: 400px;
+    grid-template-columns: 1fr 1fr 1fr;
+    float: left;
+}
+
+#operators {
+    display: grid;
+    background-color: yellow;
+    width: 264px;
+    height: 400px;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+.button {
+    border: 1px solid white;
+    text-align: center;
+    padding-top: 38px;
+}
+
+#zero {
+    grid-column: 1 / span 2;
+}
+#equal {
+    grid-column: 1 / span 2;
+ 
+}
