@@ -13,7 +13,7 @@ console.log(array.reduce(divide));
 
 function addToScreen(opt) {
 let screenBox = document.querySelector('#screen')
-let numeroScr = document.createElement('p');
+let numeroScr = document.createElement('div');
 numeroScr.textContent = opt
 screenBox.appendChild(numeroScr);
 }
@@ -21,4 +21,8 @@ screenBox.appendChild(numeroScr);
 let uno = document.querySelector('#one');
 uno.addEventListener('click', () => {
     addToScreen([1]);
+})
+let dos = document.querySelector('#two');
+dos.addEventListener('click', () => {
+    addToScreen([2]);
 })

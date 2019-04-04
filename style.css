@@ -14,15 +14,22 @@
     background-color:#353535;
     padding-top: 5px;
     box-shadow: 1px 2px 5px black inset;
-    
+    align-content: right;
 }
 
-#screen p {
+#screen div {
     font-size: 200%;
-    margin: 5px;
+    margin-top: 5px;
     color: white;
     font-family: sans-serif;
+    float: left;  
 }
+
+/*#screen div:after {
+    content: "";
+    clear: both;
+    display: table;
+  }*/
 
 #buttons {
     display: grid;
