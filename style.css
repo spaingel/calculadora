@@ -2,17 +2,18 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 35%;
+    width: 25%;
 }
 
 #screen {
-    border: 2px black solid;
-    width: 396px;
+    width: 327px;
     height: 50px;
     text-align: right;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     border-radius: 12px;
-    background-image: linear-gradient(0deg, rgb(22, 22, 22) 10%, rgb(61, 61, 61) 70%);
+    background-color:#353535;
+    padding-top: 5px;
+    box-shadow: 1px 2px 5px black inset;
     
 }
 
@@ -20,43 +21,45 @@
     font-size: 200%;
     margin: 5px;
     color: white;
+    font-family: sans-serif;
 }
 
 #buttons {
     display: grid;
-    background-color: rgb(92, 92, 92);
-    width: 400px;
-    height: 400px;
-    grid-template-columns: repeat(4, 90px);
-    grid-template-rows: repeat(5, 72px);
+    background-color: #ededed;
+    width: 330px;
+    height: 330px;
+    grid-template-columns: repeat(4, 70px);
+    grid-template-rows: repeat(5, 52px);
     /*float: left;*/
-    column-gap: 6px;
-    row-gap: 6px;
+    column-gap: 10px;
+    row-gap: 10px;
     align-content: center;
     justify-content: center;
     border-radius: 12px;
-    color: white;
-    font-size: 150%;
+    color: #a0a0a0;
+    font-size: 140%;
+    font-family: sans-serif;
+   
 }
 
 .button {
-    background-image: linear-gradient(0deg, black 30%, rgb(61, 61, 61) 70%);
+    background-color: #ededed;
     text-align: center;
-    padding-top: 20px;
-    border-radius: 20px;
-    border: 2px black solid;
+    padding-top: 13px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px, 0px 2px white inset;
     
 }
 
 .button:hover{
     opacity: 0.8;
-    background-image: linear-gradient(0deg, rgb(58, 58, 58) 30%, rgb(133, 133, 133) 70%);
 }
 
 #equal {
     grid-column-start: 4;
     grid-row: 4 / span 2; 
-    padding-top: 60px;
+    padding-top: 45px;
 }
 
 #zero {
