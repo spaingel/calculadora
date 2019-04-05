@@ -1,7 +1,8 @@
 const array = [1,2];
 let opt
 let firstArray = []
-//let firstArrayTwo
+let firstOperand
+let operateArray = []
 
 const sum = (accumulator, currentValue) => accumulator + currentValue;
 const subtract = (accumulator, currentValue) => accumulator - currentValue;
@@ -135,3 +136,22 @@ cero.addEventListener('click', () => {
 })
 
 // Operator Query Selectors
+
+let sumar = document.querySelector('#plus');
+sumar.addEventListener('click', () => {
+    firstOperand = firstArray.join("");
+    addToScreen("+")
+    firstArray = []
+    operateArray.push(firstOperand)
+    console.log(firstOperand)
+    console.log(operateArray)
+})
+
+let operate = document.querySelector('#equal')
+operate.addEventListener('click', () => {
+    firstOperand = firstArray.join("");
+    firstArray = []
+    operateArray.push(firstOperand)
+    let operateNumbers = operateArray.map(Number);
+    console.log(operateNumbers.reduce(sum));
+})
