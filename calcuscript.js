@@ -21,17 +21,117 @@ numeroScr.textContent = opt;
 screenBox.appendChild(numeroScr);
 }
 
+//Button Query Selectors
+
 let uno = document.querySelector('#one');
 uno.addEventListener('click', () => {
+    if(firstArray.length < 18){
     addToScreen([1]);
     opt = 1;
     firstArray.push(opt)
-    console.log(firstArray)
+    console.log(firstArray)}
+    else {
+        console.log("max array size")
+    }
 })
 let dos = document.querySelector('#two');
 dos.addEventListener('click', () => {
+    if(firstArray.length < 18){
     addToScreen([2]);
     opt = 2;
     firstArray.push(opt)
-    console.log(firstArray)
+    console.log(firstArray)}
+    else {
+        console.log("max array size")
+    }
 })
+let tres = document.querySelector('#three');
+tres.addEventListener('click', () => {
+    if(firstArray.length < 18){
+    addToScreen([3]);
+    opt = 3;
+    firstArray.push(opt)
+    console.log(firstArray)}
+    else {
+        console.log("max array size")
+    }
+})
+let cuatro = document.querySelector('#four');
+cuatro.addEventListener('click', () => {
+    if(firstArray.length < 18){
+    addToScreen([4]);
+    opt = 4;
+    firstArray.push(opt)
+    console.log(firstArray)}
+    else {
+        console.log("max array size")
+    }
+})
+let cinco = document.querySelector('#five');
+cinco.addEventListener('click', () => {
+    if(firstArray.length < 18){
+    addToScreen([5]);
+    opt = 5;
+    firstArray.push(opt)
+    console.log(firstArray)}
+    else {
+        console.log("max array size")
+    }
+})
+let seis = document.querySelector('#six');
+seis.addEventListener('click', () => {
+    if(firstArray.length < 18){
+    addToScreen([6]);
+    opt = 6;
+    firstArray.push(opt)
+    console.log(firstArray)}
+    else {
+        console.log("max array size")
+    }
+})
+let siete = document.querySelector('#seven');
+siete.addEventListener('click', () => {
+    if(firstArray.length < 18){
+    addToScreen([7]);
+    opt = 7;
+    firstArray.push(opt)
+    console.log(firstArray)}
+    else {
+        console.log("max array size")
+    }
+})
+let ocho = document.querySelector('#eight');
+ocho.addEventListener('click', () => {
+    if(firstArray.length < 18){
+    addToScreen([8]);
+    opt = 8;
+    firstArray.push(opt)
+    console.log(firstArray)}
+    else {
+        console.log("max array size")
+    }
+})
+let nueve = document.querySelector('#nine');
+nueve.addEventListener('click', () => {
+    if(firstArray.length < 18){
+    addToScreen([9]);
+    opt = 9;
+    firstArray.push(opt)
+    console.log(firstArray)}
+    else {
+        console.log("max array size")
+    }
+})
+let cero = document.querySelector('#zero');
+cero.addEventListener('click', () => {
+    if(firstArray.length < 18){
+    addToScreen([0]);
+    opt = 0;
+    firstArray.push(opt)
+    console.log(firstArray)}
+    else {
+        console.log("max array size")
+    }
+})
+
+// Operator Query Selectors
