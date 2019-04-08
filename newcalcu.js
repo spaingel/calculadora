@@ -3,8 +3,7 @@ let b = 2
 let op
 let result
 
-function operate() {
-op = prompt("operação?");
+function operate(op) {
     switch (op) {
         case "+":
         result = a+b;
@@ -19,6 +18,5 @@ op = prompt("operação?");
         result = a/b;
         break;
     }
+    console.log(result)
 }
-operate();
-console.log(result)
