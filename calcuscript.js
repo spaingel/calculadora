@@ -1,8 +1,11 @@
-const array = [1,2];
+let array = [1,2]
 let opt
 let firstArray = []
-let firstOperand
 let operateArray = []
+let firstOperand
+let latestOperation
+let screenBox
+let result
 
 const sum = (accumulator, currentValue) => accumulator + currentValue;
 const subtract = (accumulator, currentValue) => accumulator - currentValue;
@@ -15,7 +18,7 @@ console.log(array.reduce(multiply));
 console.log(array.reduce(divide));
 
 function addToScreen(opt) {
-let screenBox = document.querySelector('#screen')
+screenBox = document.querySelector('#screen')
 let numeroScr = document.createElement('div');
 numeroScr.classList.add("numScr")
 numeroScr.textContent = opt;
@@ -140,9 +143,19 @@ cero.addEventListener('click', () => {
 let sumar = document.querySelector('#plus');
 sumar.addEventListener('click', () => {
     firstOperand = firstArray.join("");
-    addToScreen("+")
+    latestOperation = "+"
     firstArray = []
     operateArray.push(firstOperand)
+    for (let r = screenBox.childNodes.length - 1; r >= 0; r--) {
+        screenBox.removeChild(screenBox.childNodes[r])
+    };
+    operateArray = operateArray.map(Number);
+    addToScreen("+ ");
+    if (operateArray.length > 1) {
+       result = operateArray.reduce(sum);
+    operateArray = [];
+    operateArray.push(result);
+}
     console.log(firstOperand)
     console.log(operateArray)
 })
@@ -152,6 +165,6 @@ operate.addEventListener('click', () => {
     firstOperand = firstArray.join("");
     firstArray = []
     operateArray.push(firstOperand)
-    let operateNumbers = operateArray.map(Number);
-    console.log(operateNumbers.reduce(sum));
+    operateArray = operateArray.map(Number);
+    console.log(operateArray.reduce(sum));
 })
