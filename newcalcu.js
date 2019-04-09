@@ -24,6 +24,7 @@ function operate(op) {
     }
 };
 
+//Junta os numeros no ecra e converte num int limpado o array
 function convToNumber(){
     converted = operArray.join("");
     converted = Number(converted)
@@ -117,53 +118,58 @@ cero.addEventListener('click', () => {
 
 let sumar = document.querySelector('#plus');
 sumar.addEventListener('click', () => {
-    interrIgual = false;
-    op = "+";
-    convToNumber(); // junta os numeros no ecra e converte num int limpado o array
-    clearScreen();
-    if (typeof a == 'undefined') { // testa se existe ja um operando. Senão coloca no operando A
-        a = converted
-    }
-    else { // isto serve para fazer a matematica no caso de não ter premido no botão igual
+    interrIgual = false; op = "+";
+    convToNumber(); clearScreen();
+    if (typeof a == 'undefined') { a = converted }
+    else {
         b = converted
         operate(op);
-        a = result
-        //b = 'undefined' 
-    };
-    addToScreen(a + "+")
-/*console.log(a)
-console.log(b)
-console.log(converted)*/
-    
+        a = result};
+    addToScreen(a + " +")
 });
 
 let restar = document.querySelector('#minus');
 restar.addEventListener('click', () => {
-    interrIgual = false;
-    op = "-";
-    convToNumber();
-    clearScreen();
+    interrIgual = false; op = "-";
+    convToNumber(); clearScreen();
     if (typeof a == 'undefined') { a = converted }
     else {
         b = converted;
         operate(op);
-        a = result;
-        b = 'undefined';
-    };
-    addToScreen(a + "-")   
+        a = result;};
+    addToScreen(a + " -")   
+});
+
+let multiplicar = document.querySelector('#multiply');
+multiplicar.addEventListener('click', () => {
+    interrIgual = false; op = "*";
+    convToNumber(); clearScreen();
+    if (typeof a == 'undefined') { a = converted }
+    else {
+        b = converted;
+        operate(op);
+        a = result;};
+    addToScreen(a + " x")   
+});
+
+let dividir = document.querySelector('#divide');
+dividir.addEventListener('click', () => {
+    interrIgual = false; op = "/";
+    convToNumber(); clearScreen();
+    if (typeof a == 'undefined') { a = converted }
+    else {
+        b = converted;
+        operate(op);
+        a = result;};
+    addToScreen(a + " /"); 
 });
 
 let igual = document.querySelector('#equal');
 igual.addEventListener('click', () => {
-    convToNumber();
-    clearScreen();
+    convToNumber(); clearScreen();
     b = converted;
     operate(op);
     addToScreen(result)
-/*console.log(a)
-console.log(b)
-console.log(converted)
-console.log(result);*/
     a = result;
     op = 'undefined'
     interrIgual = true
