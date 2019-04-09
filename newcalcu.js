@@ -47,69 +47,69 @@ function addToScreen(numeral) {
 // NUMBER QUERY SELECTORS
 let uno = document.querySelector('#one');
 uno.addEventListener('click', () => {
-    if (operArray.length < 18 && interrIgual == false) { 
+    if (operArray.length < 17 && interrIgual == false) {
     addToScreen(1)
     operArray.push(1)}
 });
 
 let dos = document.querySelector('#two');
 dos.addEventListener('click', () => {
-    if (operArray.length < 18 && interrIgual == false) { 
+    if (operArray.length < 17 && interrIgual == false) { 
     addToScreen(2)
     operArray.push(2)}
 });
 let tres = document.querySelector('#three');
 tres.addEventListener('click', () => {
-    if (operArray.length < 18 && interrIgual == false) { 
+    if (operArray.length < 17 && interrIgual == false) { 
         addToScreen(3)
         operArray.push(3)}
 });
 
 let cuatro = document.querySelector('#four');
 cuatro.addEventListener('click', () => {
-    if (operArray.length < 18 && interrIgual == false) { 
+    if (operArray.length < 17 && interrIgual == false) { 
         addToScreen(4)
         operArray.push(4)}
 });
 
 let cinco = document.querySelector('#five');
 cinco.addEventListener('click', () => {
-    if (operArray.length < 18 && interrIgual == false) { 
+    if (operArray.length < 17 && interrIgual == false) { 
         addToScreen(5)
         operArray.push(5)}
 });
 
 let seis = document.querySelector('#six');
 seis.addEventListener('click', () => {
-    if (operArray.length < 18 && interrIgual == false) { 
+    if (operArray.length < 17 && interrIgual == false) { 
         addToScreen(6)
         operArray.push(6)}
 });
 
 let siete = document.querySelector('#seven');
 siete.addEventListener('click', () => {
-    if (operArray.length < 18 && interrIgual == false) { 
+    if (operArray.length < 17 && interrIgual == false) { 
         addToScreen(7)
         operArray.push(7)}
 });
 
 let ocho = document.querySelector('#eight');
 ocho.addEventListener('click', () => {
-    if (operArray.length < 18 && interrIgual == false) { 
+    if (operArray.length < 17 && interrIgual == false) { 
         addToScreen(8)
         operArray.push(8)}
 });
 
 let nueve = document.querySelector('#nine');
 nueve.addEventListener('click', () => {
-    if (operArray.length < 18 && interrIgual == false) { 
+    if (operArray.length < 17 && interrIgual == false) { 
         addToScreen(9)
         operArray.push(9)}
 });
 
 let cero = document.querySelector('#zero');
 cero.addEventListener('click', () => {
-    if (operArray.length < 18 && interrIgual == false) { 
+    if (operArray.length < 17 && interrIgual == false) { 
         addToScreen(0)
         operArray.push(0)}
 });
@@ -125,7 +125,7 @@ sumar.addEventListener('click', () => {
         b = converted
         operate(op);
         a = result};
-    addToScreen(a + " +")
+    addToScreen(" +")
 });
 
 let restar = document.querySelector('#minus');
@@ -137,7 +137,7 @@ restar.addEventListener('click', () => {
         b = converted;
         operate(op);
         a = result;};
-    addToScreen(a + " -")   
+    addToScreen(" -")   
 });
 
 let multiplicar = document.querySelector('#multiply');
@@ -149,7 +149,7 @@ multiplicar.addEventListener('click', () => {
         b = converted;
         operate(op);
         a = result;};
-    addToScreen(a + " x")   
+    addToScreen(" x")   
 });
 
 let dividir = document.querySelector('#divide');
@@ -161,7 +161,7 @@ dividir.addEventListener('click', () => {
         b = converted;
         operate(op);
         a = result;};
-    addToScreen(a + " /"); 
+    addToScreen(" /"); 
 });
 
 let igual = document.querySelector('#equal');
@@ -173,4 +173,22 @@ igual.addEventListener('click', () => {
     a = result;
     op = 'undefined'
     interrIgual = true
+});
+
+let limpiar = document.querySelector('#clear');
+limpiar.addEventListener('click', () => {
+    clearScreen();
+    a = 0
+    b = 0
+    op = 'undefined'
+    result = 0
+    operArray = [];
+    converted = 0
+    interrIgual = false
+});
+
+let volver = document.querySelector('#return');
+volver.addEventListener('click', ()=> {
+    let cleanLast = document.querySelector("#screen")
+    cleanLast.removeChild(cleanLast.lastChild)
 });
