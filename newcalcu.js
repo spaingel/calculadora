@@ -21,6 +21,7 @@ function operate(op) {
         break;
         case "/":
         result = a/b;
+        result = Math.round(result * 10)/10
         break;
     }
 };
@@ -153,7 +154,6 @@ multiplicar.addEventListener('click', () => {
     convToNumber(); clearScreen();
     if (typeof a == 'undefined') { a = converted; op = "*"; }
     else {
-        b = converted;
         operate(op);
         a = result;
         op = "*"
@@ -169,9 +169,8 @@ dividir.addEventListener('click', () => {
     convToNumber(); clearScreen();
     if (typeof a == 'undefined') { a = converted; op = "/";}
     else {
-        b = converted;
         operate(op);
-        a = result;
+        a = Math.result;
         op = "/"
         b = "undefined"};
     addToScreen(a+" /")}
