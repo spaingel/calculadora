@@ -8,6 +8,7 @@ let converted
 let interrIgual = false
 
 function operate(op) {
+    b = converted
     switch (op) {
         case "+":
         result = a+b;
@@ -115,74 +116,82 @@ cero.addEventListener('click', () => {
 });
 
 // OPERATOR QUERY SELECTORS
-
 let sumar = document.querySelector('#plus');
 sumar.addEventListener('click', () => {
     if(operArray.length > 0 || interrIgual == true){
-    interrIgual = false; op = "+";
+    interrIgual = false;
     convToNumber(); clearScreen();
-    if (typeof a == 'undefined') { a = converted }
+    if (typeof a == 'undefined') { a = converted;  op = "+" }
     else {
-        b = converted
         operate(op);
-        a = result};
-    addToScreen(" +")}
+        a = result
+        op = "+"
+        b = "undefined"};
+    addToScreen(a+ " +")}
     else {console.log("ERROR")}
 });
 
 let restar = document.querySelector('#minus');
 restar.addEventListener('click', () => {
     if(operArray.length > 0 || interrIgual == true){
-    interrIgual = false; op = "-";
+    interrIgual = false;
     convToNumber(); clearScreen();
-    if (typeof a == 'undefined') { a = converted }
+    if (typeof a == 'undefined') { a = converted; op = "-" }
     else {
-        b = converted;
         operate(op);
-        a = result;};
-    addToScreen(" -")}
+        a = result;
+        op = "-"
+        b = "undefined"};
+    addToScreen(a+" -")}
     else {console.log("ERROR")} 
 });
 
 let multiplicar = document.querySelector('#multiply');
 multiplicar.addEventListener('click', () => {
     if(operArray.length > 0 || interrIgual == true){
-    interrIgual = false; op = "*";
+    interrIgual = false;
     convToNumber(); clearScreen();
-    if (typeof a == 'undefined') { a = converted }
+    if (typeof a == 'undefined') { a = converted; op = "*"; }
     else {
         b = converted;
         operate(op);
-        a = result;};
-    addToScreen(" x")}
+        a = result;
+        op = "*"
+        b = "undefined"};
+    addToScreen(a+" x")}
     else {console.log("ERROR")}  
 });
 
 let dividir = document.querySelector('#divide');
 dividir.addEventListener('click', () => {
     if(operArray.length > 0 || interrIgual == true){
-    interrIgual = false; op = "/";
+    interrIgual = false;
     convToNumber(); clearScreen();
-    if (typeof a == 'undefined') { a = converted }
+    if (typeof a == 'undefined') { a = converted; op = "/";}
     else {
         b = converted;
         operate(op);
-        a = result;};
-    addToScreen(" /")}
+        a = result;
+        op = "/"
+        b = "undefined"};
+    addToScreen(a+" /")}
     else {console.log("ERROR")} 
 });
 
 let igual = document.querySelector('#equal');
 igual.addEventListener('click', () => {
+    if (typeof a == 'undefined') {console.log("error dude")}
+    else {
     convToNumber(); clearScreen();
     b = converted;
     operate(op);
     addToScreen(result)
     a = result;
     op = 'undefined'
-    interrIgual = true
+    interrIgual = true}
 });
 
+//CLEAR BUTTON
 let limpiar = document.querySelector('#clear');
 limpiar.addEventListener('click', () => {
     clearScreen();
@@ -194,7 +203,7 @@ limpiar.addEventListener('click', () => {
     converted = 0
     interrIgual = false
 });
-
+//RETURN BUTTON
 let volver = document.querySelector('#return');
 volver.addEventListener('click', ()=> {
     let cleanLast = document.querySelector("#screen")
