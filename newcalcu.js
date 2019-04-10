@@ -24,19 +24,19 @@ function operate(op) {
     }
 };
 
-//Junta os numeros no ecra e converte num int limpado o array
+//Junta os numeros no ecrã e converte num int limpado o array
 function convToNumber(){
     converted = operArray.join("");
     converted = Number(converted)
     operArray = []
 };
-
+//Remove os divs do ecrã
 function clearScreen(){
     for (let r = visor.childNodes.length - 1; r >= 0; r--) {
         visor.removeChild(visor.childNodes[r])
     };
 };
-
+//Adiciona números no ecrã
 function addToScreen(numeral) {
     let numVisor = document.createElement('div');
     numVisor.classList.add("numScr")
@@ -47,69 +47,69 @@ function addToScreen(numeral) {
 // NUMBER QUERY SELECTORS
 let uno = document.querySelector('#one');
 uno.addEventListener('click', () => {
-    if (operArray.length < 17 && interrIgual == false) {
+    if (operArray.length < 15 && interrIgual == false) {
     addToScreen(1)
     operArray.push(1)}
 });
 
 let dos = document.querySelector('#two');
 dos.addEventListener('click', () => {
-    if (operArray.length < 17 && interrIgual == false) { 
+    if (operArray.length < 15 && interrIgual == false) { 
     addToScreen(2)
     operArray.push(2)}
 });
 let tres = document.querySelector('#three');
 tres.addEventListener('click', () => {
-    if (operArray.length < 17 && interrIgual == false) { 
+    if (operArray.length < 15 && interrIgual == false) { 
         addToScreen(3)
         operArray.push(3)}
 });
 
 let cuatro = document.querySelector('#four');
 cuatro.addEventListener('click', () => {
-    if (operArray.length < 17 && interrIgual == false) { 
+    if (operArray.length < 15 && interrIgual == false) { 
         addToScreen(4)
         operArray.push(4)}
 });
 
 let cinco = document.querySelector('#five');
 cinco.addEventListener('click', () => {
-    if (operArray.length < 17 && interrIgual == false) { 
+    if (operArray.length < 15 && interrIgual == false) { 
         addToScreen(5)
         operArray.push(5)}
 });
 
 let seis = document.querySelector('#six');
 seis.addEventListener('click', () => {
-    if (operArray.length < 17 && interrIgual == false) { 
+    if (operArray.length < 15 && interrIgual == false) { 
         addToScreen(6)
         operArray.push(6)}
 });
 
 let siete = document.querySelector('#seven');
 siete.addEventListener('click', () => {
-    if (operArray.length < 17 && interrIgual == false) { 
+    if (operArray.length < 15 && interrIgual == false) { 
         addToScreen(7)
         operArray.push(7)}
 });
 
 let ocho = document.querySelector('#eight');
 ocho.addEventListener('click', () => {
-    if (operArray.length < 17 && interrIgual == false) { 
+    if (operArray.length < 15 && interrIgual == false) { 
         addToScreen(8)
         operArray.push(8)}
 });
 
 let nueve = document.querySelector('#nine');
 nueve.addEventListener('click', () => {
-    if (operArray.length < 17 && interrIgual == false) { 
+    if (operArray.length < 15 && interrIgual == false) { 
         addToScreen(9)
         operArray.push(9)}
 });
 
 let cero = document.querySelector('#zero');
 cero.addEventListener('click', () => {
-    if (operArray.length < 17 && interrIgual == false) { 
+    if (operArray.length < 15 && interrIgual == false) { 
         addToScreen(0)
         operArray.push(0)}
 });
@@ -118,6 +118,7 @@ cero.addEventListener('click', () => {
 
 let sumar = document.querySelector('#plus');
 sumar.addEventListener('click', () => {
+    if(operArray.length > 0 || interrIgual == true){
     interrIgual = false; op = "+";
     convToNumber(); clearScreen();
     if (typeof a == 'undefined') { a = converted }
@@ -125,11 +126,13 @@ sumar.addEventListener('click', () => {
         b = converted
         operate(op);
         a = result};
-    addToScreen(" +")
+    addToScreen(" +")}
+    else {console.log("ERROR")}
 });
 
 let restar = document.querySelector('#minus');
 restar.addEventListener('click', () => {
+    if(operArray.length > 0 || interrIgual == true){
     interrIgual = false; op = "-";
     convToNumber(); clearScreen();
     if (typeof a == 'undefined') { a = converted }
@@ -137,11 +140,13 @@ restar.addEventListener('click', () => {
         b = converted;
         operate(op);
         a = result;};
-    addToScreen(" -")   
+    addToScreen(" -")}
+    else {console.log("ERROR")} 
 });
 
 let multiplicar = document.querySelector('#multiply');
 multiplicar.addEventListener('click', () => {
+    if(operArray.length > 0 || interrIgual == true){
     interrIgual = false; op = "*";
     convToNumber(); clearScreen();
     if (typeof a == 'undefined') { a = converted }
@@ -149,11 +154,13 @@ multiplicar.addEventListener('click', () => {
         b = converted;
         operate(op);
         a = result;};
-    addToScreen(" x")   
+    addToScreen(" x")}
+    else {console.log("ERROR")}  
 });
 
 let dividir = document.querySelector('#divide');
 dividir.addEventListener('click', () => {
+    if(operArray.length > 0 || interrIgual == true){
     interrIgual = false; op = "/";
     convToNumber(); clearScreen();
     if (typeof a == 'undefined') { a = converted }
@@ -161,7 +168,8 @@ dividir.addEventListener('click', () => {
         b = converted;
         operate(op);
         a = result;};
-    addToScreen(" /"); 
+    addToScreen(" /")}
+    else {console.log("ERROR")} 
 });
 
 let igual = document.querySelector('#equal');
@@ -190,5 +198,11 @@ limpiar.addEventListener('click', () => {
 let volver = document.querySelector('#return');
 volver.addEventListener('click', ()=> {
     let cleanLast = document.querySelector("#screen")
+    if (visor.firstElementChild.textContent == " +" || " -" || " *" || " /") {
+        console.log("oppsError")
+    }
+    else {
     cleanLast.removeChild(cleanLast.lastChild)
+    operArray.splice(-1, 1);
+    }
 });
