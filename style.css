@@ -47,7 +47,7 @@
     color: #a0a0a0;
     font-size: 140%;
     font-family: sans-serif;
-   
+    cursor: pointer;
 }
 
 .button {
@@ -57,10 +57,6 @@
     border-radius: 10px;
     box-shadow: 0px 1px 3px, 0px 2px white inset;
     
-}
-
-.button:hover{
-    opacity: 0.8;
 }
 
 #equal {
