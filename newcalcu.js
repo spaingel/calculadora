@@ -127,8 +127,9 @@ sumar.addEventListener('click', () => {
         operate(op);
         a = result
         op = "+"
-        b = "undefined"};
-    addToScreen(a+ " +")}
+        b = undefined};
+    addToScreen(a)
+    addToScreen(" +")}
     else {console.log("ERROR")}
 });
 
@@ -142,8 +143,9 @@ restar.addEventListener('click', () => {
         operate(op);
         a = result;
         op = "-"
-        b = "undefined"};
-    addToScreen(a+" -")}
+        b = undefined};
+    addToScreen(a)
+    addToScreen(" -")}
     else {console.log("ERROR")} 
 });
 
@@ -157,8 +159,9 @@ multiplicar.addEventListener('click', () => {
         operate(op);
         a = result;
         op = "*"
-        b = "undefined"};
-    addToScreen(a+" x")}
+        b = undefined};
+    addToScreen(a)
+    addToScreen(" x")}
     else {console.log("ERROR")}  
 });
 
@@ -170,10 +173,11 @@ dividir.addEventListener('click', () => {
     if (typeof a == 'undefined') { a = converted; op = "/";}
     else {
         operate(op);
-        a = Math.result;
+        a = result;
         op = "/"
-        b = "undefined"};
-    addToScreen(a+" /")}
+        b = undefined};
+    addToScreen(a)
+    addToScreen(" /")}
     else {console.log("ERROR")} 
 });
 
@@ -186,7 +190,7 @@ igual.addEventListener('click', () => {
     operate(op);
     addToScreen(result)
     a = result;
-    op = 'undefined'
+    op = undefined
     interrIgual = true}
 });
 
@@ -194,19 +198,37 @@ igual.addEventListener('click', () => {
 let limpiar = document.querySelector('#clear');
 limpiar.addEventListener('click', () => {
     clearScreen();
-    a = 0
-    b = 0
-    op = 'undefined'
-    result = 0
+    a = undefined
+    b = undefined
+    op = undefined
+    result = undefined
     operArray = [];
-    converted = 0
+    converted = undefined
     interrIgual = false
 });
 //RETURN BUTTON
 let volver = document.querySelector('#return');
-volver.addEventListener('click', ()=> {
+volver.addEventListener('click', () => {
     let cleanLast = document.querySelector("#screen")
-    if (visor.firstElementChild.textContent == " +" || " -" || " *" || " /") {
+    let cleanLastSecond = cleanLast.lastChild
+
+        /*switch (cleanLastSecond.textContent) {
+            case (" +"):
+            console.log("oppsError")
+            case (" -"):
+            console.log("oppsError")
+            case (" *"):
+            console.log("oppsError")
+            case (" /"):
+            console.log("oppsError")
+            case (undefined):
+            cleanLast.removeChild(cleanLast.lastChild)
+            operArray.splice(-1, 1);
+            default:
+            cleanLast.removeChild(cleanLast.lastChild)
+            operArray.splice(-1, 1);
+        }*/
+    if ((cleanLastSecond.textContent == " +"|| " -" || " *" || " /") && (operArray.length == 0)) {
         console.log("oppsError")
     }
     else {
