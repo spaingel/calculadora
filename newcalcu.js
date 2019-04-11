@@ -6,6 +6,7 @@ let visor = document.querySelector("#screen")
 let operArray = [];
 let converted
 let interrIgual = false
+let dotCheck = false
 
 function operate(op) {
     b = converted
@@ -116,10 +117,22 @@ cero.addEventListener('click', () => {
         operArray.push(0)}
 });
 
+let ponto = document.querySelector('#dot');
+ponto.addEventListener('click', () => {
+    if (operArray.length == 0 || dotCheck == true) {
+        console.log("Errororor")
+    }
+    else {
+    dotCheck = true
+    addToScreen(".")
+    operArray.push(".")}
+});
+
 // OPERATOR QUERY SELECTORS
 let sumar = document.querySelector('#plus');
 sumar.addEventListener('click', () => {
     if(operArray.length > 0 || interrIgual == true){
+    dotCheck = false;
     interrIgual = false;
     convToNumber(); clearScreen();
     if (typeof a == 'undefined') { a = converted;  op = "+" }
@@ -136,6 +149,7 @@ sumar.addEventListener('click', () => {
 let restar = document.querySelector('#minus');
 restar.addEventListener('click', () => {
     if(operArray.length > 0 || interrIgual == true){
+    dotCheck = false;
     interrIgual = false;
     convToNumber(); clearScreen();
     if (typeof a == 'undefined') { a = converted; op = "-" }
@@ -152,6 +166,7 @@ restar.addEventListener('click', () => {
 let multiplicar = document.querySelector('#multiply');
 multiplicar.addEventListener('click', () => {
     if(operArray.length > 0 || interrIgual == true){
+    dotCheck = false;
     interrIgual = false;
     convToNumber(); clearScreen();
     if (typeof a == 'undefined') { a = converted; op = "*"; }
@@ -168,6 +183,7 @@ multiplicar.addEventListener('click', () => {
 let dividir = document.querySelector('#divide');
 dividir.addEventListener('click', () => {
     if(operArray.length > 0 || interrIgual == true){
+    dotCheck = false;
     interrIgual = false;
     convToNumber(); clearScreen();
     if (typeof a == 'undefined') { a = converted; op = "/";}
@@ -191,7 +207,8 @@ igual.addEventListener('click', () => {
     addToScreen(result)
     a = result;
     op = undefined
-    interrIgual = true}
+    interrIgual = true
+    dotCheck = false}
 });
 
 //CLEAR BUTTON
