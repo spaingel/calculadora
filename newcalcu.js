@@ -21,10 +21,15 @@ function operate(op) {
         result = a*b;
         break;
         case "/":
-        result = a/b;
-        result = Math.round(result * 10)/10
+            if (b == 0) {
+            result = "Za Warudo!!!"
+            interrIgual = true
+            break;}
+            else {
+            result = a/b;
+            result = Math.round(result * 10)/10
         break;
-    }
+    }}
 };
 
 //Junta os numeros no ecrã e converte num int limpado o array
@@ -46,6 +51,7 @@ function addToScreen(numeral) {
     numVisor.textContent = numeral;
     visor.appendChild(numVisor);
 };
+
 
 // NUMBER QUERY SELECTORS
 let uno = document.querySelector('#one');
@@ -131,7 +137,7 @@ ponto.addEventListener('click', () => {
 // OPERATOR QUERY SELECTORS
 let sumar = document.querySelector('#plus');
 sumar.addEventListener('click', () => {
-    if(operArray.length > 0 || interrIgual == true){
+    if(operArray.length > 0 || interrIgual == true && a != "Za Warudo!!!"){
     dotCheck = false;
     interrIgual = false;
     convToNumber(); clearScreen();
@@ -148,7 +154,7 @@ sumar.addEventListener('click', () => {
 
 let restar = document.querySelector('#minus');
 restar.addEventListener('click', () => {
-    if(operArray.length > 0 || interrIgual == true){
+    if(operArray.length > 0 || interrIgual == true && a != "Za Warudo!!!"){
     dotCheck = false;
     interrIgual = false;
     convToNumber(); clearScreen();
@@ -165,7 +171,7 @@ restar.addEventListener('click', () => {
 
 let multiplicar = document.querySelector('#multiply');
 multiplicar.addEventListener('click', () => {
-    if(operArray.length > 0 || interrIgual == true){
+    if(operArray.length > 0 || interrIgual == true && a != "Za Warudo!!!"){
     dotCheck = false;
     interrIgual = false;
     convToNumber(); clearScreen();
@@ -182,13 +188,13 @@ multiplicar.addEventListener('click', () => {
 
 let dividir = document.querySelector('#divide');
 dividir.addEventListener('click', () => {
-    if(operArray.length > 0 || interrIgual == true){
+    if(operArray.length > 0 || interrIgual == true && a != "Za Warudo!!!"){
     dotCheck = false;
     interrIgual = false;
     convToNumber(); clearScreen();
     if (typeof a == 'undefined') { a = converted; op = "/";}
     else {
-        operate(op);
+        operate(op)
         a = result;
         op = "/"
         b = undefined};
