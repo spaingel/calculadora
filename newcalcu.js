@@ -56,6 +56,8 @@ function addToScreen(numeral) {
 // NUMBER QUERY SELECTORS
 let uno = document.querySelector('#one');
 uno.addEventListener('click', () => {
+    if (interrIgual == true) {
+        limpar()}
     if (operArray.length < 15 && interrIgual == false) {
     addToScreen(1)
     operArray.push(1)}
@@ -63,12 +65,16 @@ uno.addEventListener('click', () => {
 
 let dos = document.querySelector('#two');
 dos.addEventListener('click', () => {
+    if (interrIgual == true) {
+        limpar()}
     if (operArray.length < 15 && interrIgual == false) { 
     addToScreen(2)
     operArray.push(2)}
 });
 let tres = document.querySelector('#three');
 tres.addEventListener('click', () => {
+    if (interrIgual == true) {
+        limpar()}
     if (operArray.length < 15 && interrIgual == false) { 
         addToScreen(3)
         operArray.push(3)}
@@ -76,6 +82,8 @@ tres.addEventListener('click', () => {
 
 let cuatro = document.querySelector('#four');
 cuatro.addEventListener('click', () => {
+    if (interrIgual == true) {
+        limpar()}
     if (operArray.length < 15 && interrIgual == false) { 
         addToScreen(4)
         operArray.push(4)}
@@ -83,6 +91,8 @@ cuatro.addEventListener('click', () => {
 
 let cinco = document.querySelector('#five');
 cinco.addEventListener('click', () => {
+    if (interrIgual == true) {
+        limpar()}
     if (operArray.length < 15 && interrIgual == false) { 
         addToScreen(5)
         operArray.push(5)}
@@ -90,6 +100,8 @@ cinco.addEventListener('click', () => {
 
 let seis = document.querySelector('#six');
 seis.addEventListener('click', () => {
+    if (interrIgual == true) {
+        limpar()}
     if (operArray.length < 15 && interrIgual == false) { 
         addToScreen(6)
         operArray.push(6)}
@@ -97,6 +109,8 @@ seis.addEventListener('click', () => {
 
 let siete = document.querySelector('#seven');
 siete.addEventListener('click', () => {
+    if (interrIgual == true) {
+        limpar()}
     if (operArray.length < 15 && interrIgual == false) { 
         addToScreen(7)
         operArray.push(7)}
@@ -104,6 +118,8 @@ siete.addEventListener('click', () => {
 
 let ocho = document.querySelector('#eight');
 ocho.addEventListener('click', () => {
+    if (interrIgual == true) {
+        limpar()}
     if (operArray.length < 15 && interrIgual == false) { 
         addToScreen(8)
         operArray.push(8)}
@@ -111,6 +127,8 @@ ocho.addEventListener('click', () => {
 
 let nueve = document.querySelector('#nine');
 nueve.addEventListener('click', () => {
+    if (interrIgual == true) {
+        limpar()}
     if (operArray.length < 15 && interrIgual == false) { 
         addToScreen(9)
         operArray.push(9)}
@@ -118,6 +136,8 @@ nueve.addEventListener('click', () => {
 
 let cero = document.querySelector('#zero');
 cero.addEventListener('click', () => {
+    if (interrIgual == true) {
+        limpar()}
     if (operArray.length < 15 && interrIgual == false) { 
         addToScreen(0)
         operArray.push(0)}
@@ -219,7 +239,9 @@ igual.addEventListener('click', () => {
 
 //CLEAR BUTTON
 let limpiar = document.querySelector('#clear');
-limpiar.addEventListener('click', () => {
+limpiar.addEventListener('click', limpar); 
+
+function limpar(){
     clearScreen();
     a = undefined
     b = undefined
@@ -228,29 +250,12 @@ limpiar.addEventListener('click', () => {
     operArray = [];
     converted = undefined
     interrIgual = false
-});
+};
 //RETURN BUTTON
 let volver = document.querySelector('#return');
 volver.addEventListener('click', () => {
     let cleanLast = document.querySelector("#screen")
     let cleanLastSecond = cleanLast.lastChild
-
-        /*switch (cleanLastSecond.textContent) {
-            case (" +"):
-            console.log("oppsError")
-            case (" -"):
-            console.log("oppsError")
-            case (" *"):
-            console.log("oppsError")
-            case (" /"):
-            console.log("oppsError")
-            case (undefined):
-            cleanLast.removeChild(cleanLast.lastChild)
-            operArray.splice(-1, 1);
-            default:
-            cleanLast.removeChild(cleanLast.lastChild)
-            operArray.splice(-1, 1);
-        }*/
     if ((cleanLastSecond.textContent == " +"|| " -" || " *" || " /") && (operArray.length == 0)) {
         console.log("oppsError")
     }
